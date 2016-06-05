@@ -25,10 +25,10 @@ internal cache. Don't get worked up if the percentage is low.
 
 # Heat Map Demo
 
-If you visit /map, you should see a demo of all the current Apache requests to
-your site, rendered as a heatmap. In addition to the map, the top five
-locations (global cities) will also be listed in the bottom-right hand corner
-of your screen. Requests are mapped to locations with a local GeoIP database.
+If you visit /map, you should see a demo of all the current requests to your
+site, rendered as a heatmap. In addition to the map, the top five locations
+(global cities) will also be listed in the bottom-right hand corner of your
+screen. Requests are mapped to locations with a local GeoIP database.
 
 # Filtering Logs
 
