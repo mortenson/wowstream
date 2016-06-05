@@ -35,9 +35,9 @@ of your screen. Requests are mapped to locations with a local GeoIP database.
 If you find that there are too many requests on screen to track, you can pass
 in a regular expression that all incoming logs must pass to be displayed. ex:
 
-localhost:8080/map?127.0.0.1
+Show requests from a specific IP - localhost:8080/map?123.4.5.6
 
-localhost:8080?/my-wonky-url
+Exclude requests to file directories - localhost:8080?^((?!/sites/.*/files).)*$
 
 # Installation
 
