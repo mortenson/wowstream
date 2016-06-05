@@ -31,7 +31,7 @@ var ws_map = (function () {
 
       httpRequest.onload = function () {
         var data, data_array, i, j, data_sorted, data_index,
-          rankings, location_string;
+          rankings, location_string, city, region, country;
         if (httpRequest.status >= 200 && httpRequest.status < 400) {
           data = JSON.parse(httpRequest.responseText);
         } else {
@@ -68,7 +68,10 @@ var ws_map = (function () {
 
         rankings = '';
         for (j = 0; (j < 5) && (j < data_sorted.length); ++j) {
-          location_string = data_sorted[j].city + ' ' + data_sorted[j].region + ', ' + data_sorted[j].country;
+          city = data_sorted[j].city || 'Unknown City';
+          region = data_sorted[j].region || 'Unknown Region';
+          country = data_sorted[j].country || 'Unknown Country';
+          location_string = city + ' ' + region + ', ' + country;
           rankings += '<li>' + location_string + ' (' + data_sorted[j].count + ' hits)</li>';
         }
         document.getElementById('map-rankings').innerHTML = rankings;
@@ -84,12 +87,12 @@ var ws_map = (function () {
   };
 
   Map.prototype.isSupportedType = function (type) {
-    return type === 'apache-request';
+    return type === 'bal-request';
   };
 
   /*jslint unparam: true */
   Map.prototype.handleRequest = function (request_id, data) {
-    var ip = data.text.split(' ')[0];
+    var ip = data.text.match(/forwarded_for="[\S]*[",]/)[0].replace(/forwarded_for="|"|,/g, '');
     this.queue.push(ip);
   };
 
