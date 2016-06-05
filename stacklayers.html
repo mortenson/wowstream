@@ -28,11 +28,7 @@
             type: 'drupal-request'
           }
         ];
-
-        var elem = document.createElement('div');
-        elem.id = 'wowstream-renderer';
-        document.body.appendChild(elem);
-        var renderer = new ws_stackrings(elem, layers);
+        var renderer = new ws_stackrings(document.body, layers);
         var logstream = new ws_logstream(renderer);
         logstream.startStreaming();
       }
