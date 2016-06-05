@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/leaflet.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script src="/js/leaflet.js"></script>
+    <script src="/js/heatmap.js"></script>
+    <script src="/js/leaflet-heatmap.js"></script>
+    <script src="/js/logstream.js"></script>
+    <script src="/js/map.js"></script>
+    <script>
+      window.onload = function() {
+        var renderer = new ws_map(document.body);
+        var logstream = new ws_logstream(renderer);
+        logstream.startStreaming();
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

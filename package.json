@@ -1,0 +1,22 @@
+{
+  "name": "wowstream",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node wowstream.js"
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "basic-auth": "^1.0.4",
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "geoip-lite": "^1.1.8",
+    "heatmap.js": "git://github.com/pa7/heatmap.js.git#927923d",
+    "leaflet": "^0.7.7",
+    "path": "^0.12.7",
+    "request": "^2.72.0",
+    "two.js": "git://github.com/jonobr1/two.js.git#v0.6.0"
+  }
+}

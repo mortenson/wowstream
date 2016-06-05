@@ -1,0 +1,9 @@
+{
+  "username": "cloudapi@example.com",
+  "secret": "aL0ngC10ud4PIk3y",
+  "http_username": "keep",
+  "http_password": "out",
+  "site": "prod:sitename",
+  "environment": "prod",
+  "port": 8080
+}

@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script src="/js/two.min.js"></script>
+    <script src="/js/logstream.js"></script>
+    <script src="/js/stacklayers.js"></script>
+    <script>
+      window.onload = function() {
+        var layers = [
+          {
+            label: 'Balancer',
+            stroke: '#29AAE1',
+            type: 'bal-request'
+          },
+          {
+            label: 'Varnish',
+            stroke: '#8AC340',
+            type: 'varnish-request'
+          },
+          {
+            label: 'Apache',
+            stroke: '#F7914F',
+            type: 'apache-request'
+          },
+          {
+            label: 'Drupal',
+            stroke: '#F05A26',
+            type: 'drupal-request'
+          }
+        ];
+
+        var elem = document.createElement('div');
+        elem.id = 'wowstream-renderer';
+        document.body.appendChild(elem);
+        var renderer = new ws_stackrings(elem, layers);
+        var logstream = new ws_logstream(renderer);
+        logstream.startStreaming();
+      }
+  </script>
+  </head>
+  <body></body>
+</html>
